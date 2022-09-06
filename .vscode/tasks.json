@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Clean Build Regen",
+            "type": "shell",
+            "command": "scripts/clean_build_regen.sh"
+        },
+        {
+            "label": "Clean Build",
+            "type": "shell",
+            "command": "scripts/clean_build.sh"
+        },
+        {
+            "label": "Regen",
+            "type": "shell",
+            "command": "scripts/regen.sh"
+        },
+        {
+            "label": "Fix Issues",
+            "type": "shell",
+            "command": "dart fix --apply && dart fix --apply"
+        },
+    ]
+}
