@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'app/dependencies.dart';
-import 'pages/example/example_page.dart';
 
 void main() {
   runApp(const App());
@@ -15,8 +14,8 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Dependencies(
-        child: ExamplePage(),
+      home: Dependencies(
+        child: Container(color: Colors.blue),
       ),
     );
   }

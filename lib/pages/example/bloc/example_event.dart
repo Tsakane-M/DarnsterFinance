@@ -1,6 +1,6 @@
-part of 'example_bloc.dart';
+// part of 'example_bloc.dart';
 
-@immutable
-abstract class ExampleEvent {}
+// @immutable
+// abstract class ExampleEvent {}
 
-class ExampleDidLoadEvent extends ExampleEvent {}
+// class ExampleDidLoadEvent extends ExampleEvent {}
