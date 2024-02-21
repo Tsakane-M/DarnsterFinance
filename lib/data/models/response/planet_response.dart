@@ -1,21 +1,21 @@
-import 'package:json_annotation/json_annotation.dart';
+// import 'package:json_annotation/json_annotation.dart';
 
-part 'planet_response.g.dart';
+// part 'planet_response.g.dart';
 
-@JsonSerializable()
-class PlanetResponse {
-  PlanetResponse({
-    required this.name,
-    required this.rotationPeriod,
-  });
+// @JsonSerializable()
+// class PlanetResponse {
+//   PlanetResponse({
+//     required this.name,
+//     required this.rotationPeriod,
+//   });
 
-  factory PlanetResponse.fromJson(Map<String, dynamic> json) =>
-      _$PlanetResponseFromJson(json);
+//   factory PlanetResponse.fromJson(Map<String, dynamic> json) =>
+//       _$PlanetResponseFromJson(json);
 
-  final String name;
+//   final String name;
 
-  @JsonKey(name: 'rotation_period')
-  final String rotationPeriod;
+//   @JsonKey(name: 'rotation_period')
+//   final String rotationPeriod;
 
-  Map<String, dynamic> toJson() => _$PlanetResponseToJson(this);
-}
+//   Map<String, dynamic> toJson() => _$PlanetResponseToJson(this);
+// }

@@ -1,4 +1,4 @@
-package com.example.flutter_bootstrap
+package darnster_finance
 
 import io.flutter.embedding.android.FlutterActivity
 
