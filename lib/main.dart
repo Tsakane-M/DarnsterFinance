@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-// import 'app/dependencies.dart';
-// import 'pages/example/example_page.dart';
+import 'app/dependencies.dart';
+import 'pages/example/example_page.dart';
 
 void main() {
   runApp(const App());
@@ -11,13 +11,13 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        // theme: ThemeData(
-        //   primarySwatch: Colors.blue,
-        // ),
-        // home: const Dependencies(
-        //   child: ExamplePage(),
-        // ),
-        );
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const Dependencies(
+        child: ExamplePage(),
+      ),
+    );
   }
 }

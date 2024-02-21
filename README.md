@@ -1,4 +1,4 @@
-# darnster_bootstrap
+# flutter_bootstrap
 
 Bootstrap a flutter application with the following:
 
