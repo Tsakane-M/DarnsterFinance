@@ -1,5 +1,5 @@
 # Darnster_Finance
-
+This is a website for experimenting the possibilities of Flutter Web
 ## Packages
 - Provider
 - Bloc
