@@ -11,7 +11,7 @@ class DarnsterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dependencies(
-      child: Container(color: Colors.blue),
+      child: Container(color: ThemeData.dark().scaffoldBackgroundColor),
     );
   }
 }

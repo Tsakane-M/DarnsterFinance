@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mysite/core/color/colors.dart';
-import 'package:flutter/scheduler.dart';
+
+import '../color/colors.dart';
 
 class AppTheme {
   static ThemeData themeData(bool isDarkTheme, BuildContext context) {
@@ -10,34 +10,38 @@ class AppTheme {
 
 class ThemeColors {
   const ThemeColors._();
-  static final lightTheme = ThemeData(
+  static final ThemeData lightTheme = ThemeData(
       brightness: Brightness.light,
       fontFamily: 'Poppins',
       primaryColor: primaryColor,
-      backgroundColor: lightBackgroundColor,
+      colorScheme: ColorScheme.light(
+        background: lightBackgroundColor,
+      ),
       scaffoldBackgroundColor: lightBackgroundColor,
       visualDensity: VisualDensity.adaptivePlatformDensity,
       appBarTheme: AppBarTheme(
         backgroundColor: lightBackgroundColor,
       ),
-      textTheme: TextTheme(button: TextStyle(color: lightTextColor)));
+      textTheme: TextTheme(labelLarge: TextStyle(color: lightTextColor)));
 
-  static final darkTheme = ThemeData(
+  static final ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     fontFamily: 'Poppins',
     primaryColor: primaryColor,
-    backgroundColor: darkBackgroundColor,
+    colorScheme: ColorScheme.dark(
+      background: darkBackgroundColor,
+    ),
     scaffoldBackgroundColor: const Color(0xFF00040F),
     visualDensity: VisualDensity.adaptivePlatformDensity,
     textTheme: TextTheme(
-      button: TextStyle(color: darkTextColor),
+      labelLarge: TextStyle(color: darkTextColor),
     ),
     appBarTheme: AppBarTheme(
       backgroundColor: darkBackgroundColor,
     ),
   );
   static Brightness get currentSystemBrightness =>
-      SchedulerBinding.instance.window.platformBrightness;
+      WidgetsBinding.instance.platformDispatcher.platformBrightness;
 }
 
 extension ThemeExtras on ThemeData {

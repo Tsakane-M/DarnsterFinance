@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mysite/app/widgets/custom_outline.dart';
-import 'package:mysite/core/theme/app_theme.dart';
+
+import '../../app/widgets/custom_outline.dart';
+import '../theme/app_theme.dart';
 
 class ZoomAnimations extends StatefulWidget {
   const ZoomAnimations({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class _ZoomAnimationsState extends State<ZoomAnimations>
   late AnimationController _controller;
   late AnimationController _controller2;
   late final Animation<AlignmentGeometry> _alignAnimation;
-  late Animation sizeAnimation;
+  late Animation<dynamic> sizeAnimation;
 
   @override
   void initState() {
@@ -23,7 +24,7 @@ class _ZoomAnimationsState extends State<ZoomAnimations>
     _controller =
         AnimationController(vsync: this, duration: const Duration(seconds: 4));
 
-    sizeAnimation = Tween(begin: 0.0, end: 0.2).animate(CurvedAnimation(
+    sizeAnimation = Tween<double>(begin: 0.0, end: 0.2).animate(CurvedAnimation(
         parent: _controller,
         curve: const Interval(0.40, 0.75, curve: Curves.easeOut)));
     _controller.forward();
@@ -56,8 +57,8 @@ class _ZoomAnimationsState extends State<ZoomAnimations>
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    var theme = Theme.of(context);
+    final Size size = MediaQuery.of(context).size;
+    final ThemeData theme = Theme.of(context);
 
     return SizedBox(
       width: size.width / 4,
@@ -73,13 +74,13 @@ class _ZoomAnimationsState extends State<ZoomAnimations>
           gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [
+              colors: <Color>[
                 theme.secondaryColor,
                 theme.secondaryColor.withOpacity(0),
                 theme.primaryColor.withOpacity(0.1),
                 theme.primaryColor
               ],
-              stops: const [
+              stops: const <double>[
                 0.2,
                 0.4,
                 0.6,

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-const primaryColor = Color(0xFFc8a135);
-const secondaryColor = Color(0xFF8e452f);
+const Color primaryColor = Color(0xFFc8a135);
+const Color secondaryColor = Color(0xFF8e452f);
 
-const textColor = Color(0xFF2B2B2B);
-const lightgrayColor = Color(0x44948282);
-const whiteColor = Color(0xFFFFFFFF);
-const blackColor = Color(0xFF2B2B2B);
+const Color textColor = Color(0xFF2B2B2B);
+const Color lightgrayColor = Color(0x44948282);
+const Color whiteColor = Color(0xFFFFFFFF);
+const Color blackColor = Color(0xFF2B2B2B);
 // Color kCyanColor = const Color(0xFF08F7FE);
 // const btnColor = Color(0xFF4E5E80);
 // const defaultPadding = 200.0;
@@ -26,33 +26,33 @@ Color darkTextColor = const Color(0xFFF3F2FF);
 // Color darkDividerColor = const Color(0x441C2A3D);
 // Color darkOutLineBtnColor = const Color(0xFFF3F2FF);
 
-const yellowBrown = LinearGradient(
+const LinearGradient yellowBrown = LinearGradient(
   begin: Alignment.centerLeft,
   end: Alignment.centerRight,
-  colors: [Color(0xFFc8a135), Color(0xFF8e452f)],
+  colors: <Color>[Color(0xFFc8a135), Color(0xFF8e452f)],
 );
 
-const grayBack = LinearGradient(
+const LinearGradient grayBack = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
-  colors: [Color(0XFF2E2D36), Color(0XFF11101D)],
+  colors: <Color>[Color(0XFF2E2D36), Color(0XFF11101D)],
 );
-const grayWhite = LinearGradient(
+const LinearGradient grayWhite = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
-  colors: [Color(0xFFFFFFFF), Color(0xFFF3F2FF)],
+  colors: <Color>[Color(0xFFFFFFFF), Color(0xFFF3F2FF)],
 );
 
-const buttonGradi = LinearGradient(
+const LinearGradient buttonGradi = LinearGradient(
   begin: Alignment.topCenter,
   end: Alignment.bottomCenter,
-  colors: [Color(0XFF7DE7EB), Color(0XFF33BBCF)],
+  colors: <Color>[Color(0XFF7DE7EB), Color(0XFF33BBCF)],
 );
 
-const contactGradi = LinearGradient(
+const LinearGradient contactGradi = LinearGradient(
   begin: Alignment.topCenter,
   end: Alignment.bottomCenter,
-  colors: [Color(0XFF2E2D36), Color(0XFF11101D)],
+  colors: <Color>[Color(0XFF2E2D36), Color(0XFF11101D)],
 );
 
 //

@@ -1,13 +1,6 @@
 import 'package:flutter/material.dart';
 
 class CustomOutline extends StatelessWidget {
-  final _GradientPainter _painter;
-  final Widget _child;
-
-  final double _width;
-  final double _height;
-  final EdgeInsetsGeometry _padding;
-
   CustomOutline({
     Key? key,
     required double strokeWidth,
@@ -24,6 +17,12 @@ class CustomOutline extends StatelessWidget {
         _height = height,
         _padding = padding,
         super(key: key);
+  final _GradientPainter _painter;
+  final Widget _child;
+
+  final double _width;
+  final double _height;
+  final EdgeInsetsGeometry _padding;
 
   @override
   Widget build(BuildContext context) {
@@ -41,11 +40,6 @@ class CustomOutline extends StatelessWidget {
 }
 
 class _GradientPainter extends CustomPainter {
-  final Paint _paint = Paint();
-  final double _radius;
-  final double _strokeWidth;
-  final Gradient _gradient;
-
   _GradientPainter(
       {required double strokeWidth,
       required double radius,
@@ -53,29 +47,33 @@ class _GradientPainter extends CustomPainter {
       : _strokeWidth = strokeWidth,
         _radius = radius,
         _gradient = gradient;
+  final Paint _paint = Paint();
+  final double _radius;
+  final double _strokeWidth;
+  final Gradient _gradient;
 
   @override
   void paint(Canvas canvas, Size size) {
     // create outer rectangle equals size
-    Rect outerRect = Offset.zero & size;
-    var outerRRect = RRect.fromRectAndRadius(
+    final Rect outerRect = Offset.zero & size;
+    final RRect outerRRect = RRect.fromRectAndRadius(
       outerRect,
       Radius.circular(_radius),
     );
 
     // create inner rectangle smaller by strokeWidth
-    Rect innerRect = Rect.fromLTWH(_strokeWidth, _strokeWidth,
+    final Rect innerRect = Rect.fromLTWH(_strokeWidth, _strokeWidth,
         size.width - _strokeWidth * 2, size.height - _strokeWidth * 2);
-    var innerRRect = RRect.fromRectAndRadius(
+    final RRect innerRRect = RRect.fromRectAndRadius(
         innerRect, Radius.circular(_radius - _strokeWidth));
 
     // apply gradient shader
     _paint.shader = _gradient.createShader(outerRect);
 
     // create difference between outer and inner paths and draw it
-    Path path1 = Path()..addRRect(outerRRect);
-    Path path2 = Path()..addRRect(innerRRect);
-    var path = Path.combine(PathOperation.difference, path1, path2);
+    final Path path1 = Path()..addRRect(outerRRect);
+    final Path path2 = Path()..addRRect(innerRRect);
+    final Path path = Path.combine(PathOperation.difference, path1, path2);
     canvas.drawPath(path, _paint);
   }
 
