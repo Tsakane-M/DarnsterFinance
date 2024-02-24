@@ -1,0 +1,24 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Darnster Finance(Release) - Chrome",
+        "request": "launch",
+        "type": "dart",
+        "args": ["flutter", "run", "--debug", "-d", "chrome"],
+        "cwd": "${workspaceFolder}",
+        "program": "${workspaceFolder}/lib/main.dart",
+        "flutterMode": "debug"
+      },
+
+      {
+        "name": "Darnster Finance - iPhone 15",
+        "request": "launch",
+        "type": "dart",
+        "args": ["flutter", "run", "--debug", "-d", "iPhone 15"],
+        "cwd": "${workspaceFolder}",
+        "program": "${workspaceFolder}/lib/main.dart",
+        "flutterMode": "debug"
+      }
+    ]
+  }

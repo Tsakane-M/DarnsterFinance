@@ -2,21 +2,16 @@ import 'package:flutter/material.dart';
 import 'app/dependencies.dart';
 
 void main() {
-  runApp(const App());
+  runApp(const DarnsterApp());
 }
 
-class App extends StatelessWidget {
-  const App({super.key});
+class DarnsterApp extends StatelessWidget {
+  const DarnsterApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Dependencies(
-        child: Container(color: Colors.blue),
-      ),
+    return Dependencies(
+      child: Container(color: Colors.blue),
     );
   }
 }
