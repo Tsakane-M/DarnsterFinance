@@ -12,6 +12,7 @@ import '../../core/configs/others/app_typography.dart';
 import '../../core/configs/others/space.dart';
 import '../../core/res/responsive.dart';
 import '../../core/theme/cubit/theme_cubit.dart';
+import '../home/home_page.dart';
 
 @RoutePage()
 class MainScreen extends StatelessWidget {
@@ -26,19 +27,19 @@ class MainScreen extends StatelessWidget {
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(120),
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(120),
         child: Responsive(
-          desktop: Container(),
-          mobile: Container(),
-          tablet: Container(),
+          desktop: HomeScreen(),
+          mobile: HomeScreen(),
+          tablet: HomeScreen(),
         ),
       ),
       drawer: !Responsive.isDesktop(context) ? Container() : null,
       body: BlocBuilder<ThemeCubit, ThemeState>(
-        builder: (context, state) {
+        builder: (BuildContext context, ThemeState state) {
           return Stack(
-            children: [
+            children: <Widget>[
               Positioned(
                 top: height * 0.2,
                 left: -88,
@@ -82,19 +83,6 @@ class MainScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              if (!state.isDarkThemeOn)
-                Align(
-                  alignment: Alignment.center,
-                  // BG01.png
-                  child: Image.asset(
-                    'assets/imgs/splash.jpg',
-                    opacity: const AlwaysStoppedAnimation<double>(0.2),
-                    width: width,
-                    height: height,
-                    fit: BoxFit.cover,
-                    alignment: Alignment.topCenter,
-                  ),
-                ),
               const ArrowOnTop()
             ],
           );
