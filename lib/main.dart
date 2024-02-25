@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'app/dependencies.dart';
+import 'darnster_finance.dart';
 
 void main() {
-  runApp(const DarnsterApp());
+  runApp(const EntryPoint());
 }
 
-class DarnsterApp extends StatelessWidget {
-  const DarnsterApp({super.key});
+class EntryPoint extends StatelessWidget {
+  const EntryPoint({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Dependencies(
-      child: Container(color: ThemeData.dark().scaffoldBackgroundColor),
+    return const Dependencies(
+      child: DarnsterFinance(),
     );
   }
 }

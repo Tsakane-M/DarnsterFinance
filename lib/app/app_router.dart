@@ -1,3 +1,0 @@
-class AppRouter {
-  AppRouter._();
-}
