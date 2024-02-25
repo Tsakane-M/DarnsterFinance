@@ -1,3 +1,4 @@
+import 'package:auto_route/src/route/page_route_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
@@ -5,8 +6,8 @@ import 'package:sizer/sizer.dart';
 import 'core/theme/app_theme.dart';
 import 'core/theme/cubit/theme_cubit.dart';
 import 'navigation/app_router.dart';
+import 'navigation/app_router.gr.dart';
 import 'navigation/global_app_router.dart';
-import 'pages/home/home_page.dart';
 
 class DarnsterFinance extends StatefulWidget {
   const DarnsterFinance({Key? key}) : super(key: key);
@@ -38,11 +39,16 @@ class _DarnsterFinanceState extends State<DarnsterFinance>
         return Sizer(
           builder: (BuildContext context, Orientation orientation,
               DeviceType deviceType) {
-            return MaterialApp(
+            return MaterialApp.router(
               debugShowCheckedModeBanner: false,
               title: 'Darnster Finance',
               theme: AppTheme.themeData(state.isDarkThemeOn, context),
-              home: const HomePage(),
+              routeInformationParser: appRouter.defaultRouteParser(),
+              routerDelegate:
+                  appRouter.delegate(initialRoutes: const <PageRouteInfo>[
+                //FIX ME: stop using deprecated initial routes method
+                MainRoute(),
+              ]),
             );
           },
         );

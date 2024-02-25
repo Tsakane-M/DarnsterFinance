@@ -6,4 +6,3 @@ export 'others/date_ext.dart';
 export 'others/space.dart';
 export 'others/space_ext.dart';
 export 'others/ui_props.dart';
-export 'ui.dart';
