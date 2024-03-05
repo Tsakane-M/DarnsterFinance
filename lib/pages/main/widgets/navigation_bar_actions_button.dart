@@ -5,13 +5,13 @@ import '../../../core/color/colors.dart';
 import '../../../core/theme/app_theme.dart';
 
 class NavBarActionButton extends StatefulWidget {
-  final String label;
-  final int index;
   const NavBarActionButton({
     Key? key,
     required this.label,
     required this.index,
   }) : super(key: key);
+  final String label;
+  final int index;
 
   @override
   State<NavBarActionButton> createState() => _NavBarActionButtonState();
@@ -21,7 +21,7 @@ class _NavBarActionButtonState extends State<NavBarActionButton> {
   bool isHover = false;
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
+    final ThemeData theme = Theme.of(context);
     return EntranceFader(
       offset: const Offset(0, -10),
       delay: const Duration(milliseconds: 1000),
@@ -33,7 +33,7 @@ class _NavBarActionButtonState extends State<NavBarActionButton> {
           borderRadius: BorderRadius.circular(5.0),
         ),
         child: InkWell(
-          onHover: (value) {
+          onHover: (bool value) {
             setState(() => isHover = value);
           },
           onTap: () {
