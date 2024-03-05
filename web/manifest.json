@@ -1,11 +1,11 @@
 {
-    "name": "flutter_bootstrap",
-    "short_name": "flutter_bootstrap",
+    "name": "Darnster Finance",
+    "short_name": "Darnster Finance",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Bridging your financial gap.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

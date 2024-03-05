@@ -2,4 +2,4 @@
 String darnsterTitle = 'DARNSTER FINANCE';
 
 //assets
-String logoLight = 'assets/images/logo_dark.jpg';
+String darnsterFinanceLogo = 'assets/images/darnster_logo.png';

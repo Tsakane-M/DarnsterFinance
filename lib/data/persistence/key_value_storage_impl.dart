@@ -4,15 +4,15 @@ import 'key_value_storage.dart';
 
 class KeyValueStorageImpl implements KeyValueStorage {
   @override
-  Future<String?> getExample(String value) async {
+  Future<bool> getTheme() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getString(_KeyValueStorageKey.example.name);
+    return prefs.getBool(_KeyValueStorageKey.theme.name) ?? true;
   }
 
   @override
-  Future<void> setExample(String value) async {
+  Future<void> setTheme(bool isDarkThemeOn) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString(_KeyValueStorageKey.example.name, value);
+    await prefs.setBool(_KeyValueStorageKey.theme.name, isDarkThemeOn);
   }
 
   @override
@@ -24,4 +24,6 @@ class KeyValueStorageImpl implements KeyValueStorage {
   }
 }
 
-enum _KeyValueStorageKey { example }
+enum _KeyValueStorageKey {
+  theme,
+}

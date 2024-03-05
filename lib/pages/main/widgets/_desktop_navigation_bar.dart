@@ -23,19 +23,19 @@ class _DesktopNavigationBarState extends State<_DesktopNavigationBar> {
             const NavigationBarLogo(),
             const Expanded(child: SizedBox(width: double.infinity)),
             ...NavBarUtils.names.asMap().entries.map(
-                  (MapEntry<int, String> entry) => NavBarActionButton(
+                  (MapEntry<int, String> entry) => NavigationBarActionButton(
                     label: entry.value,
                     index: entry.key,
                   ),
                 ),
             InkWell(
                 onTap: () {
-                  context.read<ThemeCubit>().updateTheme(!state.isDarkThemeOn);
+                  final bool newThemeState = !state.isDarkThemeOn;
+                  context.read<ThemeCubit>().updateTheme(newThemeState);
                 },
-                child: Image.network(
-                  state.isDarkThemeOn ? IconUrls.darkIcon : IconUrls.lightIcon,
-                  height: 30,
-                  width: 30,
+                child: Icon(
+                  state.isDarkThemeOn ? AppIcons.darkMode : AppIcons.lightMode,
+                  size: 30,
                   color: state.isDarkThemeOn ? Colors.black : Colors.white,
                 )),
           ],

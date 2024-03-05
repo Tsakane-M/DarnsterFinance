@@ -1,5 +1,5 @@
 abstract class KeyValueStorage {
-  Future<String?> getExample(String value);
-  Future<void> setExample(String value);
+  Future<bool> getTheme();
+  Future<void> setTheme(bool isDarkThemeOn);
   Future<void> deleteAll();
 }

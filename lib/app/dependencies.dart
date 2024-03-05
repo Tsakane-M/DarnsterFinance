@@ -22,8 +22,6 @@ class Dependencies extends StatelessWidget {
         Provider<Dio>(
           create: (BuildContext context) => Dio(),
         ),
-
-        BlocProvider<ThemeCubit>(create: (_) => ThemeCubit()),
         // Apis / Clients
         // Provider<SwapiApi>(
         //   create: (BuildContext context) => SwapiApi(

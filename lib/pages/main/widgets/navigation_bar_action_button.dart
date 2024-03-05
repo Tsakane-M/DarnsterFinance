@@ -4,8 +4,8 @@ import '../../../core/animations/entrance_fader.dart';
 import '../../../core/color/colors.dart';
 import '../../../core/theme/app_theme.dart';
 
-class NavBarActionButton extends StatefulWidget {
-  const NavBarActionButton({
+class NavigationBarActionButton extends StatefulWidget {
+  const NavigationBarActionButton({
     Key? key,
     required this.label,
     required this.index,
@@ -14,10 +14,10 @@ class NavBarActionButton extends StatefulWidget {
   final int index;
 
   @override
-  State<NavBarActionButton> createState() => _NavBarActionButtonState();
+  State<NavigationBarActionButton> createState() => _NavBarActionButtonState();
 }
 
-class _NavBarActionButtonState extends State<NavBarActionButton> {
+class _NavBarActionButtonState extends State<NavigationBarActionButton> {
   bool isHover = false;
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,10 @@ class _NavBarActionButtonState extends State<NavBarActionButton> {
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text(
               widget.label,
-              style: TextStyle(color: theme.textColor),
+              style: TextStyle(
+                color: theme.textColor,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
