@@ -74,7 +74,12 @@ extension ThemeExtras on ThemeData {
             Color(0xFF0000FF), // Blue at the border
             Color(0xFF0000FF), // Blue at the bottom
           ],
-          stops: <double>[0.0, 0.49, 0.51, 1.0], // Adjust stops for a clear border
+          stops: <double>[
+            0.0,
+            0.49,
+            0.51,
+            1.0
+          ], // Adjust stops for a clear border
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ).createShader(const Rect.fromLTWH(
