@@ -8,6 +8,7 @@ abstract class Dimensions {
   static const double smallHalved = 6.0;
   static const double small = 12.0;
   static const double regular = 16.0;
+  static const double mediumHalved = 10.0;
   static const double medium = 20.0;
   static const double large = 30.0;
   static const double semiLarge = 50.0;

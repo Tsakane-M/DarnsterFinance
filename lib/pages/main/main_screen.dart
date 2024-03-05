@@ -15,6 +15,7 @@ import '../../core/theme/app_theme.dart';
 import '../../core/theme/cubit/theme_cubit.dart';
 
 import '../../data/persistence/key_value_storage.dart';
+import '../../dimensions/dimensions.dart';
 import '../home/home_page.dart';
 import 'widgets/navigation_bar_action_button.dart';
 import 'widgets/navigation_bar_logo.dart';

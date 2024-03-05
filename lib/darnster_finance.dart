@@ -43,7 +43,7 @@ class _DarnsterFinanceState extends State<DarnsterFinance>
             return MaterialApp.router(
               debugShowCheckedModeBanner: false,
               title: darnsterTitle,
-              theme: AppTheme.themeData(state.isDarkThemeOn, context),
+              theme: AppTheme.themeData(state.isLightThemeOn, context),
               routeInformationParser: appRouter.defaultRouteParser(),
               routerDelegate:
                   appRouter.delegate(initialRoutes: const <PageRouteInfo>[

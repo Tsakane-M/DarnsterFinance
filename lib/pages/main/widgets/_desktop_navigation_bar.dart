@@ -28,15 +28,18 @@ class _DesktopNavigationBarState extends State<_DesktopNavigationBar> {
                     index: entry.key,
                   ),
                 ),
+            const SizedBox(
+              width: Dimensions.mediumHalved,
+            ),
             InkWell(
                 onTap: () {
-                  final bool newThemeState = !state.isDarkThemeOn;
+                  final bool newThemeState = !state.isLightThemeOn;
                   context.read<ThemeCubit>().updateTheme(newThemeState);
                 },
                 child: Icon(
-                  state.isDarkThemeOn ? AppIcons.darkMode : AppIcons.lightMode,
-                  size: 30,
-                  color: state.isDarkThemeOn ? Colors.black : Colors.white,
+                  state.isLightThemeOn ? AppIcons.darkMode : AppIcons.lightMode,
+                  size: Dimensions.large,
+                  color: state.isLightThemeOn ? Colors.black : Colors.white,
                 )),
           ],
         ),
