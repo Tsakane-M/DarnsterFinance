@@ -12,7 +12,7 @@ class ThemeColors {
   const ThemeColors._();
   static final ThemeData lightTheme = ThemeData(
       brightness: Brightness.light,
-      fontFamily: 'Poppins',
+      fontFamily: 'Arial Arabic',
       primaryColor: primaryColor,
       colorScheme: ColorScheme.light(
         background: lightBackgroundColor,
@@ -26,7 +26,7 @@ class ThemeColors {
 
   static final ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
-    fontFamily: 'Poppins',
+    fontFamily: 'Arial Arabic',
     primaryColor: primaryColor,
     colorScheme: ColorScheme.dark(
       background: darkBackgroundColor,
@@ -45,7 +45,7 @@ class ThemeColors {
 }
 
 extension ThemeExtras on ThemeData {
-  Color get navBarColor => brightness == Brightness.light
+  Color get navigationBarColor => brightness == Brightness.light
       ? const Color(0xffF0F0F0)
       : const Color(0xFF00040F);
   //
@@ -61,4 +61,24 @@ extension ThemeExtras on ThemeData {
   //
   Gradient get contactCard =>
       brightness == Brightness.light ? grayWhite : contactGradi;
+
+  TextStyle get logoTextStyle {
+    return TextStyle(
+      fontWeight: FontWeight.bold,
+      fontFamily: 'Arial Arabic Bold',
+      foreground: Paint()
+        ..shader = const LinearGradient(
+          colors: <Color>[
+            Color(0xFFFF0000), // Red at the top
+            Color(0xFFFF0000), // Red at the border
+            Color(0xFF0000FF), // Blue at the border
+            Color(0xFF0000FF), // Blue at the bottom
+          ],
+          stops: <double>[0.0, 0.49, 0.51, 1.0], // Adjust stops for a clear border
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ).createShader(const Rect.fromLTWH(
+            0.0, 0.0, 200.0, 70.0)), // Adjust the Rect as needed
+    );
+  }
 }

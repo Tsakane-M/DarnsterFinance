@@ -5,6 +5,7 @@ import 'package:sizer/sizer.dart';
 
 import 'core/theme/app_theme.dart';
 import 'core/theme/cubit/theme_cubit.dart';
+import 'core/util/strings.dart';
 import 'navigation/app_router.dart';
 import 'navigation/app_router.gr.dart';
 import 'navigation/global_app_router.dart';
@@ -41,7 +42,7 @@ class _DarnsterFinanceState extends State<DarnsterFinance>
               DeviceType deviceType) {
             return MaterialApp.router(
               debugShowCheckedModeBanner: false,
-              title: 'Darnster Finance',
+              title: darnsterTitle,
               theme: AppTheme.themeData(state.isDarkThemeOn, context),
               routeInformationParser: appRouter.defaultRouteParser(),
               routerDelegate:

@@ -3,16 +3,23 @@ import 'dart:ui';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../app/utils/navbar_utils.dart';
 import '../../app/widgets/arrow_on_top.dart';
+import '../../core/apis/links.dart';
 import '../../core/color/colors.dart';
-import '../../core/configs/others/app_typography.dart';
-import '../../core/configs/others/space.dart';
-import '../../core/res/responsive.dart';
+import '../../core/configs/app.dart';
+import '../../core/responsive/responsive.dart';
+import '../../core/theme/app_theme.dart';
 import '../../core/theme/cubit/theme_cubit.dart';
+
 import '../home/home_page.dart';
+import 'widgets/navigation_bar_actions_button.dart';
+import 'widgets/navigation_bar_logo.dart';
+part 'widgets/_desktop_navigation_bar.dart';
+// part 'widgets/_mobile_drawer.dart';
+// part 'widgets/_body.dart';
 
 @RoutePage()
 class MainScreen extends StatelessWidget {
@@ -20,17 +27,15 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Space.init();
-    AppText.init();
-
+    AppConfig.init(context);
     final double height = MediaQuery.of(context).size.height;
-    final double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(120),
         child: Responsive(
-          desktop: HomeScreen(),
+          desktop: _DesktopNavigationBar(),
           mobile: HomeScreen(),
           tablet: HomeScreen(),
         ),

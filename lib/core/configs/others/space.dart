@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-// import '../ui.dart';
-// import '../app_dimensions.dart';
 
 class Space {
   static Widget? x(double no) => SizedBox(width: no);

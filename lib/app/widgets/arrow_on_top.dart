@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../core/animations/entrance_fader.dart';
@@ -26,11 +25,11 @@ class ArrowOnTopState extends State<ArrowOnTop> {
               EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.025),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
-            children: [
+            children: <Widget>[
               InkWell(
                 borderRadius: BorderRadius.circular(8.0),
                 onTap: () {},
-                onHover: (isHovering) {
+                onHover: (bool isHovering) {
                   if (isHovering) {
                     setState(() => isHover = true);
                   } else {
@@ -44,7 +43,7 @@ class ArrowOnTopState extends State<ArrowOnTop> {
                       bottomLeft: Radius.circular(8.0),
                     ),
                     boxShadow: isHover
-                        ? [
+                        ? <BoxShadow>[
                             const BoxShadow(
                               blurRadius: 12.0,
                               offset: Offset(2.0, 3.0),

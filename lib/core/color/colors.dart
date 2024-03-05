@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-const Color primaryColor = Color(0xFFc8a135);
-const Color secondaryColor = Color(0xFF8e452f);
+const Color primaryColor = Colors.blue;
+const Color secondaryColor = Colors.red;
 
 const Color textColor = Color(0xFF2B2B2B);
 const Color lightgrayColor = Color(0x44948282);
@@ -26,10 +26,10 @@ Color darkTextColor = const Color(0xFFF3F2FF);
 // Color darkDividerColor = const Color(0x441C2A3D);
 // Color darkOutLineBtnColor = const Color(0xFFF3F2FF);
 
-const LinearGradient yellowBrown = LinearGradient(
+const LinearGradient redBlue = LinearGradient(
   begin: Alignment.centerLeft,
   end: Alignment.centerRight,
-  colors: <Color>[Color(0xFFc8a135), Color(0xFF8e452f)],
+  colors: <Color>[Colors.red, Colors.blue],
 );
 
 const LinearGradient grayBack = LinearGradient(
