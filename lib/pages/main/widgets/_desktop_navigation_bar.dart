@@ -1,7 +1,12 @@
 part of '../main_screen.dart';
 
 class _DesktopNavigationBar extends StatefulWidget {
-  const _DesktopNavigationBar({Key? key}) : super(key: key);
+  const _DesktopNavigationBar({
+    Key? key,
+    required this.tabsRouter,
+  }) : super(key: key);
+
+  final TabsRouter tabsRouter;
 
   @override
   State<_DesktopNavigationBar> createState() => _DesktopNavigationBarState();
@@ -12,6 +17,7 @@ class _DesktopNavigationBarState extends State<_DesktopNavigationBar> {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     final ThemeData theme = Theme.of(context);
+    final TabsRouter tabsRouter = widget.tabsRouter;
 
     return BlocBuilder<ThemeCubit, ThemeState>(
         builder: (BuildContext context, ThemeState state) {
@@ -22,12 +28,15 @@ class _DesktopNavigationBarState extends State<_DesktopNavigationBar> {
           children: <Widget>[
             const NavigationBarLogo(),
             const Expanded(child: SizedBox(width: double.infinity)),
-            ...NavBarUtils.names.asMap().entries.map(
-                  (MapEntry<int, String> entry) => NavigationBarActionButton(
-                    label: entry.value,
-                    index: entry.key,
-                  ),
-                ),
+            ...NavigationBarUtils.navigationBarItems.mapIndexed(
+              (int index, NavigationBarItem item) => NavigationBarActionButton(
+                onTap: () {
+                  tabsRouter.setActiveIndex(index);
+                },
+                navigationBarItem: item,
+                active: tabsRouter.activeIndex == index,
+              ),
+            ),
             const SizedBox(
               width: Dimensions.mediumHalved,
             ),

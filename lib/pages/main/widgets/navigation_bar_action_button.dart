@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../app/utils/navigationbar_utils.dart';
 import '../../../core/animations/entrance_fader.dart';
 import '../../../core/color/colors.dart';
 import '../../../core/theme/app_theme.dart';
@@ -7,12 +8,15 @@ import '../../../dimensions/dimensions.dart';
 
 class NavigationBarActionButton extends StatefulWidget {
   const NavigationBarActionButton({
-    Key? key,
-    required this.label,
-    required this.index,
-  }) : super(key: key);
-  final String label;
-  final int index;
+    Key? key, // Fix the typo here
+    required this.navigationBarItem,
+    required this.onTap,
+    required this.active,
+  }) : super(key: key); // Fix the typo here
+
+  final NavigationBarItem navigationBarItem;
+  final void Function()? onTap;
+  final bool active;
 
   @override
   State<NavigationBarActionButton> createState() => _NavBarActionButtonState();
@@ -20,19 +24,18 @@ class NavigationBarActionButton extends StatefulWidget {
 
 class _NavBarActionButtonState extends State<NavigationBarActionButton> {
   bool isHover = false;
+  NavigationBarItem get navigationBarItem => widget.navigationBarItem;
 
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
-    const double entranceFaderStart = 0;
-    const double entranceFaderEnd = -10;
-    const int entranceFaderDuration = 1000;
+
     return EntranceFader(
       offset: const Offset(
-        entranceFaderStart,
-        entranceFaderEnd,
+        0,
+        -10,
       ),
-      delay: const Duration(milliseconds: entranceFaderDuration),
+      delay: const Duration(milliseconds: 1000),
       duration: const Duration(milliseconds: 250),
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 5),
@@ -40,18 +43,18 @@ class _NavBarActionButtonState extends State<NavigationBarActionButton> {
           onHover: (bool value) {
             setState(() => isHover = value);
           },
-          onTap: () {
-            //scrollProvider.jumpTo(widget.index);
-          },
+          onTap: widget.onTap, // Use the onTap from the widget
           child: Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: Dimensions.paddingMedium,
               vertical: Dimensions.mediumHalved,
             ),
             child: Text(
-              widget.label,
+              navigationBarItem.label,
               style: TextStyle(
-                color: isHover ? primaryColor : theme.textColor,
+                color: widget.active
+                    ? primaryColor
+                    : (isHover ? primaryColor : theme.textColor),
                 fontWeight: FontWeight.bold,
               ),
             ),

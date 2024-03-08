@@ -1,3 +1,0 @@
-class SharedRoutes {
-  SharedRoutes._();
-}

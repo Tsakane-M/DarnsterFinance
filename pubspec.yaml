@@ -23,6 +23,7 @@ dependencies:
   auto_route: ^7.1.0
   auto_route_generator: ^7.3.2
   phosphor_flutter: 2.0.0
+  collection: ^1.17.2
 
 dev_dependencies:
   flutter_test:
