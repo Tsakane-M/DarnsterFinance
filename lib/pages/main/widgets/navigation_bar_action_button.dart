@@ -8,11 +8,11 @@ import '../../../dimensions/dimensions.dart';
 
 class NavigationBarActionButton extends StatefulWidget {
   const NavigationBarActionButton({
-    Key? key, // Fix the typo here
+    Key? key,
     required this.navigationBarItem,
     required this.onTap,
     required this.active,
-  }) : super(key: key); // Fix the typo here
+  }) : super(key: key);
 
   final NavigationBarItem navigationBarItem;
   final void Function()? onTap;
@@ -43,21 +43,33 @@ class _NavBarActionButtonState extends State<NavigationBarActionButton> {
           onHover: (bool value) {
             setState(() => isHover = value);
           },
-          onTap: widget.onTap, // Use the onTap from the widget
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: Dimensions.paddingMedium,
-              vertical: Dimensions.mediumHalved,
-            ),
-            child: Text(
-              navigationBarItem.label,
-              style: TextStyle(
-                color: widget.active
-                    ? primaryColor
-                    : (isHover ? primaryColor : theme.textColor),
-                fontWeight: FontWeight.bold,
+          onTap: widget.onTap,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: Dimensions.paddingMedium,
+                  vertical: Dimensions.mediumHalved,
+                ),
+                child: Text(
+                  navigationBarItem.label,
+                  style: TextStyle(
+                    color: widget.active
+                        ? primaryColor
+                        : (isHover ? primaryColor : theme.textColor),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
-            ),
+              if (isHover) // Only show icon when hovering
+                Padding(
+                  padding:
+                      const EdgeInsets.only(top: 5), // Adjust spacing as needed
+                  child: navigationBarItem
+                      .icon, // Use the respective icon from your data
+                ),
+            ],
           ),
         ),
       ),

@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +6,6 @@ import 'package:sizer/sizer.dart';
 
 import '../../app/utils/navigationbar_utils.dart';
 import '../../app_icons.dart';
-import '../../core/color/colors.dart';
 import '../../core/configs/app.dart';
 import '../../core/responsive/responsive.dart';
 import '../../core/theme/app_theme.dart';
@@ -16,10 +13,10 @@ import '../../core/theme/cubit/theme_cubit.dart';
 
 import '../../dimensions/dimensions.dart';
 import '../../navigation/app_router.gr.dart';
-import '../about/about_page.dart';
-import '../contact/contact_page.dart';
-import '../home/home_page.dart';
-import '../services/services_page.dart';
+import '../about/about_screen.dart';
+import '../contact/contact_screen.dart';
+import '../home/home_screen.dart';
+import '../services/services_screen.dart';
 import 'widgets/navigation_bar_action_button.dart';
 import 'widgets/navigation_bar_logo.dart';
 part 'widgets/_desktop_navigation_bar.dart';
@@ -72,7 +69,7 @@ class MainScreen extends StatelessWidget {
             builder: (BuildContext context, ThemeState state) {
               return IndexedStack(
                 index: tabsRouter.activeIndex,
-                children: const [
+                children: const <Widget>[
                   HomeScreen(),
                   ServicesScreen(),
                   AboutScreen(),
