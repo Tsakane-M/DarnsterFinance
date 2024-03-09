@@ -67,11 +67,11 @@ class MainScreen extends StatelessWidget {
             builder: (BuildContext context, ThemeState state) {
               return IndexedStack(
                 index: tabsRouter.activeIndex,
-                children: <Widget>[
+                children: const <Widget>[
                   HomeScreen(),
-                  const ServicesScreen(),
-                  const AboutScreen(),
-                  const ContactScreen(),
+                  ServicesScreen(),
+                  AboutScreen(),
+                  ContactScreen(),
                 ],
               );
             },

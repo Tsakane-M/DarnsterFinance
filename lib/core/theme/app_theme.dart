@@ -86,4 +86,17 @@ extension ThemeExtras on ThemeData {
             0.0, 0.0, 200.0, 70.0)), // Adjust the Rect as needed
     );
   }
+
+  TextStyle get homeSubtitleTextStyle => const TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+        color: primaryColor,
+        fontFamily: 'Century Gothic Paneuropean Bold',
+      );
+
+  TextStyle get homeTitleTextStyle => const TextStyle(
+        fontSize: 80,
+        fontWeight: FontWeight.bold,
+        fontFamily: 'Arial Arabic Bold',
+      );
 }

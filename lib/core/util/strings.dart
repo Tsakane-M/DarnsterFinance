@@ -5,13 +5,19 @@ String services = 'SERVICES';
 String about = 'ABOUT';
 String contact = 'CONTACT';
 
-String mainText = 'Welcome ';
-String mainButtonText = 'Get Started';
+String mainTitleText = 'FINANCIAL \nCONTROL';
+String mainSubtitleText = 'Take Control of Your Finances.';
+String mainButtonText = 'LEARN MORE';
 
-String freedomTitleText = 'FINANCIAL FREEDOM';
+String freedomTitleText = 'FINANCIAL \nFREEDOM';
 String freedomSubtitleText =
-    'We offer personal 30 day loans,\n efficient and affordable access to cash.';
+    'We offer personal 30 day loans,\nefficient and affordable access to cash.';
 String freedomButtonText = 'GET A LOAN';
+
+String worriesTitleText = 'FINANCIAL \nWORRIES?';
+String worriesSubtitleText =
+    'Let us assist you in getting over the end of the month\nhurdle.We are a Financial Services provider and can\nassist you with quick loans to help your cashflow.';
+String worriesButtonText = 'CONTACT US';
 
 //assets
 String darnsterFinanceLogo = 'assets/images/darnster_logo.png';

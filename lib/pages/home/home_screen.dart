@@ -17,9 +17,9 @@ class HomeScreenState extends State<HomeScreen> {
   int _currentCarouselIndex = 0;
 
   final List<HomeCarouselItem> carouselItems = <HomeCarouselItem>[
-    HomeCarouselItem.mainImage(),
-    HomeCarouselItem.freedomImage(),
-    HomeCarouselItem.worriesImage(),
+    HomeCarouselItem.mainItem(),
+    HomeCarouselItem.freedomItem(),
+    HomeCarouselItem.worriesItem(),
   ];
 
   @override
