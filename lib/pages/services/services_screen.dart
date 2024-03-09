@@ -7,13 +7,14 @@ class ServicesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Our Services'),
+        title: const Text('Our Services'),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: size.width / 8, vertical: 10),
+        child: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 20),

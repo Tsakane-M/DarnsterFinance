@@ -7,10 +7,11 @@ class AboutScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    final Size size = MediaQuery.of(context).size;
+    return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
+        padding: EdgeInsets.symmetric(horizontal: size.width / 8, vertical: 10),
+        child: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(

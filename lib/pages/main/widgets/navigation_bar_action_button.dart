@@ -66,8 +66,8 @@ class _NavBarActionButtonState extends State<NavigationBarActionButton> {
                 Padding(
                   padding:
                       const EdgeInsets.only(top: 5), // Adjust spacing as needed
-                  child: navigationBarItem
-                      .icon, // Use the respective icon from your data
+                  child: navigationBarItem.icon,
+                  // Use the respective icon from your data
                 ),
             ],
           ),

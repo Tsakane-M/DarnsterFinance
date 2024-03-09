@@ -5,15 +5,16 @@ class ContactScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Contact Us'),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: size.width / 8, vertical: 10),
+        child: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: <Widget>[
             Text(
               'Contact Information',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),

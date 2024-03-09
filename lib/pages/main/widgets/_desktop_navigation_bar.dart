@@ -61,17 +61,19 @@ class _DesktopNavigationBarState extends State<_DesktopNavigationBar> {
               const SizedBox(
                 width: Dimensions.mediumHalved,
               ),
-              InkWell(
-                onTap: () {
-                  final bool newThemeState = !state.isLightThemeOn;
-                  context.read<ThemeCubit>().updateTheme(newThemeState);
-                },
-                child: Icon(
-                  state.isLightThemeOn ? AppIcons.darkMode : AppIcons.lightMode,
-                  size: Dimensions.large,
-                  color: state.isLightThemeOn ? Colors.black : Colors.white,
-                ),
-              ),
+              //disabling dark mode toggle for now
+              // InkWell(
+              //   onTap: () {
+              //     final bool newThemeState = !state.isLightThemeOn;
+              //     context.read<ThemeCubit>().updateTheme(newThemeState);
+              //   },
+
+              // child: Icon(
+              //   state.isLightThemeOn ? AppIcons.darkMode : AppIcons.lightMode,
+              //   size: Dimensions.large,
+              //   color: state.isLightThemeOn ? Colors.black : Colors.white,
+              // ),
+              // ),
             ],
           ),
         );

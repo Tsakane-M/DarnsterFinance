@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../app/utils/navigationbar_utils.dart';
-import '../../app_icons.dart';
 import '../../core/configs/app.dart';
 import '../../core/responsive/responsive.dart';
 import '../../core/theme/app_theme.dart';
@@ -30,10 +29,9 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppConfig.init(context);
-    final double height = MediaQuery.of(context).size.height;
 
     return AutoTabsRouter(
-      routes: const <PageRouteInfo<dynamic>>[
+      routes: <PageRouteInfo<dynamic>>[
         HomeRoute(),
         ServicesRoute(),
         AboutRoute(),
@@ -55,13 +53,13 @@ class MainScreen extends StatelessWidget {
         final TabsRouter tabsRouter = AutoTabsRouter.of(context);
 
         return Scaffold(
-          extendBodyBehindAppBar: true,
+          extendBodyBehindAppBar: false,
           appBar: PreferredSize(
             preferredSize: const Size.fromHeight(120),
             child: Responsive(
               desktop: _DesktopNavigationBar(tabsRouter: tabsRouter),
-              mobile: const HomeScreen(),
-              tablet: const HomeScreen(),
+              mobile: HomeScreen(),
+              tablet: HomeScreen(),
             ),
           ),
           drawer: !Responsive.isDesktop(context) ? Container() : null,
@@ -69,11 +67,11 @@ class MainScreen extends StatelessWidget {
             builder: (BuildContext context, ThemeState state) {
               return IndexedStack(
                 index: tabsRouter.activeIndex,
-                children: const <Widget>[
+                children: <Widget>[
                   HomeScreen(),
-                  ServicesScreen(),
-                  AboutScreen(),
-                  ContactScreen(),
+                  const ServicesScreen(),
+                  const AboutScreen(),
+                  const ContactScreen(),
                 ],
               );
             },
