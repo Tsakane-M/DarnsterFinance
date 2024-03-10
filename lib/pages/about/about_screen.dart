@@ -65,7 +65,7 @@ class ValueListItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 16.0),
       child: Row(
-        children: [
+        children: <Widget>[
           Icon(Icons.check, color: Theme.of(context).primaryColor),
           const SizedBox(width: 10),
           Text(value, style: const TextStyle(fontSize: 16)),

@@ -1,4 +1,3 @@
-import 'package:auto_route/src/route/page_route_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
@@ -7,7 +6,6 @@ import 'core/theme/app_theme.dart';
 import 'core/theme/cubit/theme_cubit.dart';
 import 'core/util/strings.dart';
 import 'navigation/app_router.dart';
-import 'navigation/app_router.gr.dart';
 import 'navigation/global_app_router.dart';
 
 class DarnsterFinance extends StatefulWidget {

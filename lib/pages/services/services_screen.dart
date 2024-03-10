@@ -16,7 +16,7 @@ class ServicesScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: size.width / 8, vertical: 10),
         child: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: <Widget>[
             SizedBox(height: 20),
             ServiceCard(
               title: 'Microloans',
@@ -44,41 +44,41 @@ class ServicesScreen extends StatelessWidget {
 }
 
 class ServiceCard extends StatelessWidget {
-  final String title;
-  final String description;
-  final IconData icon;
-
   const ServiceCard({
     Key? key,
     required this.title,
     required this.description,
     required this.icon,
   }) : super(key: key);
+  final String title;
+  final String description;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: <Widget>[
             Row(
-              children: [
+              children: <Widget>[
                 Icon(icon, size: 40, color: Theme.of(context).primaryColor),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Text(
                   title,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               description,
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
           ],
         ),

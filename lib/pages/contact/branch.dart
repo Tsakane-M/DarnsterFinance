@@ -15,7 +15,7 @@ class Branch extends StatelessWidget {
     required this.latLng,
   }) : super(key: key);
 
-  Branch.headOffice({Key? key})
+  const Branch.headOffice({Key? key})
       : this(
           key: key,
           branchName: 'Head Office Branch',
@@ -27,7 +27,7 @@ class Branch extends StatelessWidget {
           latLng: const LatLng(-20.156817, 28.580317),
         );
 
-  Branch.chipinge({Key? key})
+  const Branch.chipinge({Key? key})
       : this(
           key: key,
           branchName: 'Chipinge Branch',
