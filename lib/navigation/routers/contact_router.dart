@@ -18,8 +18,5 @@ class ContactRouterConfig extends AutoRouter {
       path: '',
       page: ContactScreenRoute.page,
     ),
-    SharedRoutes.aboutRoute,
-    SharedRoutes.servicesRoute,
-    SharedRoutes.homeRoute,
   ];
 }

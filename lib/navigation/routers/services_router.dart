@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 
 import '../app_router.gr.dart';
-import 'shared_routes.dart';
 
 @RoutePage(name: 'ServicesRouter')
 class ServicesRouterConfig extends AutoRouter {
@@ -18,8 +17,5 @@ class ServicesRouterConfig extends AutoRouter {
       path: '',
       page: ServicesScreenRoute.page,
     ),
-    SharedRoutes.aboutRoute,
-    SharedRoutes.contactRoute,
-    SharedRoutes.homeRoute,
   ];
 }

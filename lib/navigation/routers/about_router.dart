@@ -18,8 +18,5 @@ class AboutRouterConfig extends AutoRouter {
       path: '',
       page: AboutScreenRoute.page,
     ),
-    SharedRoutes.contactRoute,
-    SharedRoutes.homeRoute,
-    SharedRoutes.servicesRoute,
   ];
 }
