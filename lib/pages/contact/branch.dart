@@ -105,22 +105,22 @@ class Branch extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
-            width: 200,
-            height: 200,
-            child: GoogleMap(
-              initialCameraPosition: CameraPosition(
-                target: latLng,
-                zoom: 15,
-              ),
-              markers: <Marker>{
-                Marker(
-                  markerId: MarkerId(branchName),
-                  position: latLng,
-                ),
-              },
-            ),
-          ),
+          // SizedBox(
+          //   width: 200,
+          //   height: 200,
+          //   child: GoogleMap(
+          //     initialCameraPosition: CameraPosition(
+          //       target: latLng,
+          //       zoom: 15,
+          //     ),
+          //     markers: <Marker>{
+          //       Marker(
+          //         markerId: MarkerId(branchName),
+          //         position: latLng,
+          //       ),
+          //     },
+          //   ),
+          // ),
         ],
       ),
     );
