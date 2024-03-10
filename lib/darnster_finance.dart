@@ -45,11 +45,7 @@ class _DarnsterFinanceState extends State<DarnsterFinance>
               title: darnsterTitle,
               theme: AppTheme.themeData(state.isLightThemeOn, context),
               routeInformationParser: appRouter.defaultRouteParser(),
-              routerDelegate:
-                  appRouter.delegate(initialRoutes: const <PageRouteInfo>[
-                //FIX ME: stop using deprecated initial routes method
-                MainRoute(),
-              ]),
+              routerDelegate: appRouter.delegate(),
             );
           },
         );

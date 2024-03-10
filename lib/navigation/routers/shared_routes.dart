@@ -6,30 +6,28 @@ class SharedRoutes {
   SharedRoutes._();
 
   static List<AutoRoute> allRoutes = <AutoRoute>[
-    homeRoute,
     contactRoute,
     aboutRoute,
     servicesRoute,
   ];
 
-  static AutoRoute homeRoute = CustomRoute(
-    path: 'home',
-    page: HomeRoute.page,
-    transitionsBuilder: TransitionsBuilders.fadeIn,
-  );
-
   static AutoRoute contactRoute = AutoRoute(
     path: 'contact',
-    page: ContactRoute.page,
+    page: ContactScreenRoute.page,
   );
 
   static AutoRoute aboutRoute = AutoRoute(
     path: 'about',
-    page: AboutRoute.page,
+    page: AboutScreenRoute.page,
   );
 
   static AutoRoute servicesRoute = AutoRoute(
     path: 'services',
-    page: ServicesRoute.page,
+    page: ServicesScreenRoute.page,
+  );
+
+  static AutoRoute homeRoute = AutoRoute(
+    path: '',
+    page: MainScreenRoute.page,
   );
 }

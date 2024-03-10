@@ -1,24 +1,14 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sizer/sizer.dart';
 
-import '../../app/utils/navigationbar_utils.dart';
 import '../../core/configs/app.dart';
 import '../../core/responsive/responsive.dart';
-import '../../core/theme/app_theme.dart';
-import '../../core/theme/cubit/theme_cubit.dart';
 
 import '../../dimensions/dimensions.dart';
 import '../../navigation/app_router.gr.dart';
-import '../about/about_screen.dart';
-import '../contact/contact_screen.dart';
-import '../home/home_screen.dart';
-import '../services/services_screen.dart';
-import 'widgets/navigation_bar_action_button.dart';
-import 'widgets/navigation_bar_logo.dart';
-part 'widgets/_desktop_navigation_bar.dart';
+
+import 'widgets/desktop_navigation_bar.dart';
+
 // part 'widgets/_mobile_drawer.dart';
 // part 'widgets/_body.dart';
 
@@ -30,12 +20,21 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     AppConfig.init(context);
 
-    return AutoTabsRouter(
-      routes: <PageRouteInfo<dynamic>>[
-        HomeRoute(),
-        ServicesRoute(),
-        AboutRoute(),
-        ContactRoute(),
+    return AutoTabsScaffold(
+      appBarBuilder: (BuildContext context, TabsRouter router) => PreferredSize(
+        preferredSize: const Size.fromHeight(Dimensions.extraExtraLarge),
+        child: Responsive(
+          desktop: DesktopNavigationBar(tabsRouter: router),
+          mobile: DesktopNavigationBar(tabsRouter: router),
+          tablet: DesktopNavigationBar(tabsRouter: router),
+        ),
+      ),
+      drawer: !Responsive.isDesktop(context) ? Container() : null,
+      routes: const <PageRouteInfo<dynamic>>[
+        HomeScreenRoute(),
+        ServicesScreenRoute(),
+        AboutScreenRoute(),
+        ContactScreenRoute(),
       ],
       transitionBuilder: (
         BuildContext context,
@@ -46,38 +45,6 @@ class MainScreen extends StatelessWidget {
         opacity: animation,
         child: child,
       ),
-      builder: (
-        BuildContext context,
-        Widget child,
-      ) {
-        final TabsRouter tabsRouter = AutoTabsRouter.of(context);
-
-        return Scaffold(
-          extendBodyBehindAppBar: false,
-          appBar: PreferredSize(
-            preferredSize: const Size.fromHeight(Dimensions.extraExtraLarge),
-            child: Responsive(
-              desktop: _DesktopNavigationBar(tabsRouter: tabsRouter),
-              mobile: HomeScreen(),
-              tablet: HomeScreen(),
-            ),
-          ),
-          drawer: !Responsive.isDesktop(context) ? Container() : null,
-          body: BlocBuilder<ThemeCubit, ThemeState>(
-            builder: (BuildContext context, ThemeState state) {
-              return IndexedStack(
-                index: tabsRouter.activeIndex,
-                children: const <Widget>[
-                  HomeScreen(),
-                  ServicesScreen(),
-                  AboutScreen(),
-                  ContactScreen(),
-                ],
-              );
-            },
-          ),
-        );
-      },
     );
   }
 }

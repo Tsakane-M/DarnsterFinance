@@ -15,6 +15,7 @@ class HomeCarouselItem extends StatelessWidget {
     required this.buttonText,
     required this.topPosition,
     required this.leftPosition,
+    required this.navigateToIndex,
     this.homeTitleTextColour,
     this.homeSubtitleTextColour,
   });
@@ -28,6 +29,7 @@ class HomeCarouselItem extends StatelessWidget {
         subTitleText = mainSubtitleText,
         topPosition = 100,
         leftPosition = 100,
+        navigateToIndex = 1,
         buttonText = mainButtonText;
 
   HomeCarouselItem.freedomItem({
@@ -39,6 +41,7 @@ class HomeCarouselItem extends StatelessWidget {
         homeSubtitleTextColour = lightOrangeColor,
         topPosition = 100,
         leftPosition = 100,
+        navigateToIndex = 1,
         buttonText = freedomButtonText;
 
   HomeCarouselItem.worriesItem({
@@ -50,6 +53,7 @@ class HomeCarouselItem extends StatelessWidget {
         homeSubtitleTextColour = lightOrangeColor,
         topPosition = 100,
         leftPosition = 780,
+        navigateToIndex = 3,
         buttonText = worriesButtonText;
 
   final String image;
@@ -60,6 +64,7 @@ class HomeCarouselItem extends StatelessWidget {
   final double leftPosition;
   final Color? homeTitleTextColour;
   final Color? homeSubtitleTextColour;
+  final int navigateToIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -96,8 +101,8 @@ class HomeCarouselItem extends StatelessWidget {
               ColorChangeButton(
                 text: buttonText,
                 onTap: () {
-                  //route to contact page
-                  tabsRouter.setActiveIndex(3);
+                  //route to page
+                  tabsRouter.setActiveIndex(navigateToIndex);
                 },
                 hoverColor: homeSubtitleTextColour ?? primaryColor,
                 nonHoverColor: homeSubtitleTextColour ?? primaryColor,

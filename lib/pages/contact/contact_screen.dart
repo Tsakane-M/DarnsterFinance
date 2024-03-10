@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import '../../core/color/colors.dart';
 import '../../core/theme/app_theme.dart';
@@ -7,6 +8,7 @@ import '../../core/util/strings.dart';
 import '../../dimensions/dimensions.dart';
 import 'branch.dart';
 
+@RoutePage()
 class ContactScreen extends StatelessWidget {
   const ContactScreen({Key? key}) : super(key: key);
 

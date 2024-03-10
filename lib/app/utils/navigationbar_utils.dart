@@ -25,7 +25,7 @@ class NavigationBarUtils {
         Icons.home,
         color: secondaryColor,
       ),
-      route: HomeRoute(),
+      route: const HomeScreenRoute(),
     ),
     NavigationBarItem(
       label: services,
@@ -33,7 +33,7 @@ class NavigationBarUtils {
         Icons.work,
         color: secondaryColor,
       ),
-      route: const ServicesRoute(),
+      route: const ServicesScreenRoute(),
     ),
     NavigationBarItem(
       label: about,
@@ -41,7 +41,7 @@ class NavigationBarUtils {
         Icons.info,
         color: secondaryColor,
       ),
-      route: const AboutRoute(),
+      route: const AboutScreenRoute(),
     ),
     NavigationBarItem(
       label: contact,
@@ -49,7 +49,7 @@ class NavigationBarUtils {
         Icons.contact_page,
         color: secondaryColor,
       ),
-      route: const ContactRoute(),
+      route: const ContactScreenRoute(),
     ),
   ];
 }

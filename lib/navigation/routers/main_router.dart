@@ -6,22 +6,22 @@ import 'contact_router.dart';
 import 'home_router.dart';
 import 'services_router.dart';
 
-@RoutePage(name: 'MainRoute')
-class MainRouter extends AutoRouter {
-  const MainRouter({super.key});
+@RoutePage(name: 'MainRouter')
+class MainRouterConfig extends AutoRouter {
+  const MainRouterConfig({super.key});
 
   static AutoRoute router = AutoRoute(
     path: '/',
-    page: MainRoute.page,
+    page: MainRouter.page,
     children: _mainRoutes,
   );
 
   static final List<AutoRoute> _mainRoutes = <AutoRoute>[
-    AutoRoute(path: '', page: MainRoute.page, children: <AutoRoute>[
-      HomeRouter.router,
-      ServicesRouter.router,
-      AboutRouter.router,
-      ContactRouter.router,
+    AutoRoute(path: '', page: MainScreenRoute.page, children: <AutoRoute>[
+      HomeRouterConfig.router,
+      ServicesRouterConfig.router,
+      AboutRouterConfig.router,
+      ContactRouterConfig.router,
     ]),
   ];
 }
