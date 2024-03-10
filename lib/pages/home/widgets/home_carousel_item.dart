@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import '../../../core/color/colors.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/util/strings.dart';
-import '../../../navigation/app_router.gr.dart';
 import 'color_change_button.dart';
 
 class HomeCarouselItem extends StatelessWidget {
@@ -36,8 +35,8 @@ class HomeCarouselItem extends StatelessWidget {
   })  : image = freedomImage,
         titleText = freedomTitleText,
         subTitleText = freedomSubtitleText,
-        homeTitleTextColour = Colors.white,
-        homeSubtitleTextColour = const Color(0xFFE6D7AE),
+        homeTitleTextColour = whiteColor,
+        homeSubtitleTextColour = lightOrangeColor,
         topPosition = 100,
         leftPosition = 100,
         buttonText = freedomButtonText;
@@ -47,8 +46,8 @@ class HomeCarouselItem extends StatelessWidget {
   })  : image = worriesImage,
         titleText = worriesTitleText,
         subTitleText = worriesSubtitleText,
-        homeTitleTextColour = Colors.white,
-        homeSubtitleTextColour = const Color(0xFFE6D7AE),
+        homeTitleTextColour = whiteColor,
+        homeSubtitleTextColour = lightOrangeColor,
         topPosition = 100,
         leftPosition = 780,
         buttonText = worriesButtonText;

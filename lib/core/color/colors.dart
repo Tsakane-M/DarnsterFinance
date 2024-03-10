@@ -8,6 +8,8 @@ const Color textColor = Color(0xFF2B2B2B);
 const Color lightgrayColor = Color(0x44948282);
 const Color whiteColor = Color(0xFFFFFFFF);
 const Color blackColor = Color(0xFF2B2B2B);
+const Color lightOrangeColor = Color(0xFFE6D7AE);
+
 // Color kCyanColor = const Color(0xFF08F7FE);
 // const btnColor = Color(0xFF4E5E80);
 // const defaultPadding = 200.0;

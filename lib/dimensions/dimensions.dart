@@ -3,6 +3,8 @@
 
 abstract class Dimensions {
   // Default definition
+  static const double zero = 0;
+  static const double minute = 2.0;
   static const double extraExtraSmall = 4.0;
   static const double extraSmall = 8.0;
   static const double smallHalved = 6.0;

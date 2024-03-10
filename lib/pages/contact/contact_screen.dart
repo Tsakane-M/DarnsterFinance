@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import '../../core/color/colors.dart';
 import '../../core/theme/app_theme.dart';
 import '../../core/util/strings.dart';
+import '../../dimensions/dimensions.dart';
 import 'branch.dart';
 
 class ContactScreen extends StatelessWidget {
@@ -22,92 +24,97 @@ class ContactScreen extends StatelessWidget {
           SingleChildScrollView(
             child: Padding(
               padding: EdgeInsets.symmetric(
-                  horizontal: size.width / 8, vertical: 20),
+                horizontal: size.width / 8,
+                vertical: Dimensions.medium,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Row(
                     children: <Widget>[
                       Text(
-                        'Contact Us',
+                        contactUs,
                         style: Theme.of(context).homeTitleTextStyle.copyWith(
-                              color: Colors.white,
+                              color: whiteColor,
                               fontSize: 30,
                             ),
                       ),
-                      SizedBox(width: 15),
+                      SizedBox(width: Dimensions.medium),
                       Icon(
                         Icons.phone,
-                        color: Colors.white,
-                        size: 30,
+                        color: whiteColor,
+                        size: Dimensions.large,
                       ),
                     ],
                   ),
                   SizedBox(height: 20),
                   Text(
-                    'Feel free to reach out to us for any inquiries or assistance. Our team is here to help!',
-                    style: TextStyle(fontSize: 16, color: Colors.white),
+                    reachOut,
+                    style: TextStyle(
+                      fontSize: Dimensions.regular,
+                      color: whiteColor,
+                    ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: Dimensions.medium),
 
                   Row(
                     children: <Widget>[
                       Text(
-                        'Branch Locations',
+                        branchLocations,
                         style: Theme.of(context).homeTitleTextStyle.copyWith(
-                              color: Colors.white,
-                              fontSize: 25,
+                              color: whiteColor,
+                              fontSize: Dimensions.large,
                             ),
                       ),
-                      SizedBox(width: 15),
+                      SizedBox(width: Dimensions.medium),
                       Icon(
                         Icons.location_on,
-                        color: Colors.white,
-                        size: 25,
+                        color: whiteColor,
+                        size: Dimensions.large,
                       ),
                     ],
                   ),
                   //Branch Locations
                   Branch.headOffice(),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: Dimensions.medium),
                   Branch.chipinge(),
-                  SizedBox(height: 20),
+                  SizedBox(height: Dimensions.medium),
 
                   // Contact Form
                   Container(
-                    padding: EdgeInsets.all(20),
+                    padding: EdgeInsets.all(Dimensions.medium),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.8),
+                      color: whiteColor.withOpacity(0.8),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          'Send us a message',
+                          sendUSMessage,
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: Dimensions.medium,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: Dimensions.medium),
                         TextFormField(
                           decoration: InputDecoration(
-                            labelText: 'Name',
+                            labelText: name,
                             border: OutlineInputBorder(),
                           ),
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: Dimensions.medium),
                         TextFormField(
                           decoration: InputDecoration(
-                            labelText: 'Email',
+                            labelText: email,
                             border: OutlineInputBorder(),
                           ),
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: Dimensions.medium),
                         TextFormField(
                           decoration: InputDecoration(
-                            labelText: 'Message',
+                            labelText: message,
                             border: OutlineInputBorder(),
                           ),
                           maxLines: 5,
@@ -115,7 +122,7 @@ class ContactScreen extends StatelessWidget {
                         SizedBox(height: 20),
                         ElevatedButton(
                           onPressed: () {},
-                          child: Text('Send'),
+                          child: Text(send),
                         ),
                       ],
                     ),
@@ -125,7 +132,7 @@ class ContactScreen extends StatelessWidget {
             ),
           ),
         ],
-  
+      ),
     );
   }
 }

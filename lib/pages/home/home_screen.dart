@@ -1,8 +1,11 @@
+import 'dart:html';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/color/colors.dart';
+import '../../dimensions/dimensions.dart';
 import 'widgets/home_carousel_item.dart';
 
 @RoutePage()
@@ -24,22 +27,28 @@ class HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    const int autoPlayInterval = 6;
+    const int autoPlayAnimationDuration = 3;
+    const double viewportFraction = 1.0;
+    final double width = MediaQuery.of(context).size.width;
+    final double height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
           CarouselSlider(
             options: CarouselOptions(
-              height: MediaQuery.of(context).size.height,
+              height: height,
               enlargeCenterPage: true,
               autoPlay: true,
-              autoPlayInterval: const Duration(seconds: 6),
-              aspectRatio: MediaQuery.of(context).size.width /
-                  MediaQuery.of(context).size.height,
+              autoPlayInterval: const Duration(seconds: autoPlayInterval),
+              aspectRatio: width / height,
               autoPlayCurve: Curves.fastOutSlowIn,
               enableInfiniteScroll: true,
-              autoPlayAnimationDuration: const Duration(seconds: 3),
-              viewportFraction: 1.0,
+              autoPlayAnimationDuration:
+                  const Duration(seconds: autoPlayAnimationDuration),
+              viewportFraction: viewportFraction,
               onPageChanged: (int index, _) {
                 setState(() {
                   _currentCarouselIndex = index;
@@ -55,17 +64,18 @@ class HomeScreenState extends State<HomeScreen> {
             }).toList(),
           ),
           Positioned(
-            bottom: 10.0,
-            left: 0,
-            right: 0,
+            bottom: Dimensions.mediumHalved,
+            left: Dimensions.zero,
+            right: Dimensions.zero,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: carouselItems.map((HomeCarouselItem item) {
                 final int index = carouselItems.indexOf(item);
                 return Container(
-                  width: 8.0,
-                  height: 8.0,
-                  margin: const EdgeInsets.symmetric(horizontal: 2.0),
+                  width: Dimensions.extraSmall,
+                  height: Dimensions.extraSmall,
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: Dimensions.minute),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: _currentCarouselIndex == index
