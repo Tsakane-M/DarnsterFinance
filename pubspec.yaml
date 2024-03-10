@@ -26,6 +26,7 @@ dependencies:
   collection: ^1.17.2
   carousel_slider: ^4.0.0
   google_maps_flutter: ^2.0.10
+  google_maps_flutter_web: ^0.5.4+3
 
 
 dev_dependencies:

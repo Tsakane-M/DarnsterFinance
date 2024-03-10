@@ -12,6 +12,9 @@
 *.ap_
 *.aab
 
+#environment variable file
+.env
+
 # Files for the ART/Dalvik VM
 *.dex
 

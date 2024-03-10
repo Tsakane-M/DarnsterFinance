@@ -1,7 +1,8 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+import '../../core/color/colors.dart';
+import '../../dimensions/dimensions.dart';
 
 class Branch extends StatelessWidget {
   const Branch({
@@ -17,24 +18,24 @@ class Branch extends StatelessWidget {
   Branch.headOffice({Key? key})
       : this(
           key: key,
-          branchName: 'Head Office',
+          branchName: 'Head Office Branch',
           address:
               'Office 106,108 & 109 1st Floor \nPrince\'s Flats, Fort Street & 9th Ave\nBulawayo',
           landline: '0292260274/5\n0292272218',
           email: 'darnsterfin@gmail.com',
           cell: '0773373867\n0777024405',
-          latLng: LatLng(-20.156817, 28.580317),
+          latLng: const LatLng(-20.156817, 28.580317),
         );
 
   Branch.chipinge({Key? key})
       : this(
           key: key,
-          branchName: 'Chipinge',
+          branchName: 'Chipinge Branch',
           address: '64 Joubert Street \nOffice 6 Sirda Building\nChipinge',
           landline: '(0227) 272042531',
           email: 'darnsterfin@gmail.com',
           cell: ' 0776180434',
-          latLng: LatLng(-20.192788, 32.619779),
+          latLng: const LatLng(-20.192788, 32.619779),
         );
 
   final String branchName;
@@ -47,80 +48,97 @@ class Branch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(Dimensions.medium),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.8),
-        borderRadius: BorderRadius.circular(10),
+        color: whiteColor.withOpacity(0.8),
+        borderRadius: BorderRadius.circular(Dimensions.mediumHalved),
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                branchName,
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+          SizedBox(
+            width: 300, // Fixed width for branch info
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  branchName,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              Text(
-                address,
-                style: TextStyle(fontSize: 16),
-              ),
-              SizedBox(height: 10),
-              Text(
-                'Landline',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+                Text(
+                  address,
+                  style: const TextStyle(fontSize: 16),
                 ),
-              ),
-              Text(
-                landline,
-                style: TextStyle(fontSize: 16),
-              ),
-              Text(
-                'Email',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+                const SizedBox(height: 10),
+                const Text(
+                  'Landline',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              Text(
-                email,
-                style: TextStyle(fontSize: 16),
-              ),
-              SizedBox(height: 10),
-              Text(
-                'Cell',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+                Text(
+                  landline,
+                  style: const TextStyle(fontSize: 16),
                 ),
-              ),
-              Text(
-                cell,
-                style: TextStyle(fontSize: 16),
-              ),
-            ],
+                const SizedBox(height: 10),
+                const Text(
+                  'Email',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  email,
+                  style: const TextStyle(fontSize: 16),
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  'Cell',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  cell,
+                  style: const TextStyle(fontSize: 16),
+                ),
+              ],
+            ),
           ),
-          // SizedBox(
-          //   width: 200,
-          //   height: 200,
-          //   child: GoogleMap(
-          //     initialCameraPosition: CameraPosition(
-          //       target: latLng,
-          //       zoom: 15,
-          //     ),
-          //     markers: <Marker>{
-          //       Marker(
-          //         markerId: MarkerId(branchName),
-          //         position: latLng,
-          //       ),
-          //     },
-          //   ),
-          // ),
+          const SizedBox(width: 20),
+          Flexible(
+            fit: FlexFit.tight,
+            child: Container(
+              height: 350,
+              decoration: BoxDecoration(
+                borderRadius:
+                    BorderRadius.circular(20), // Adjust border radius as needed
+                border: Border.all(color: Colors.blue), // Blue border
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: GoogleMap(
+                  initialCameraPosition: CameraPosition(
+                    target: latLng,
+                    zoom: 15,
+                  ),
+                  markers: <Marker>{
+                    Marker(
+                      markerId: MarkerId(branchName),
+                      position: latLng,
+                    ),
+                  },
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
