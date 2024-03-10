@@ -64,6 +64,7 @@ class HomeCarouselItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TabsRouter tabsRouter = AutoTabsRouter.of(context);
     return Stack(
       fit: StackFit.expand,
       children: <Widget>[
@@ -97,7 +98,7 @@ class HomeCarouselItem extends StatelessWidget {
                 text: buttonText,
                 onTap: () {
                   //route to contact page
-                  context.pushRoute(const ContactRoute());
+                  tabsRouter.setActiveIndex(3);
                 },
                 hoverColor: homeSubtitleTextColour ?? primaryColor,
                 nonHoverColor: homeSubtitleTextColour ?? primaryColor,

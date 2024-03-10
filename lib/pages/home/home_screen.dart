@@ -18,8 +18,8 @@ class HomeScreenState extends State<HomeScreen> {
 
   final List<HomeCarouselItem> carouselItems = <HomeCarouselItem>[
     HomeCarouselItem.mainItem(),
-    HomeCarouselItem.freedomItem(),
     HomeCarouselItem.worriesItem(),
+    HomeCarouselItem.freedomItem(),
   ];
 
   @override

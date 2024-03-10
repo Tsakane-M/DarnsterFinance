@@ -95,7 +95,7 @@ extension ThemeExtras on ThemeData {
       );
 
   TextStyle get homeTitleTextStyle => const TextStyle(
-        fontSize: 80,
+        fontSize: 60,
         fontWeight: FontWeight.bold,
         fontFamily: 'Arial Arabic Bold',
       );

@@ -16,7 +16,6 @@ class _DesktopNavigationBarState extends State<_DesktopNavigationBar> {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    final bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     final TabsRouter tabsRouter = widget.tabsRouter;
 
@@ -24,20 +23,16 @@ class _DesktopNavigationBarState extends State<_DesktopNavigationBar> {
       builder: (BuildContext context, ThemeState state) {
         return Container(
           padding:
-              EdgeInsets.symmetric(horizontal: size.width / 8, vertical: 10),
+              EdgeInsets.symmetric(horizontal: size.width / 20, vertical: 10),
           decoration: BoxDecoration(
-            gradient: LinearGradient(
+            gradient: const LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: isDarkMode
-                  ? <Color>[Colors.black87, Colors.grey[900]!]
-                  : <Color>[const Color(0xFFD3D3D3), const Color(0xFFA9A9A9)],
+              colors: <Color>[Colors.white, Colors.white],
             ),
             boxShadow: <BoxShadow>[
               BoxShadow(
-                color: isDarkMode
-                    ? Colors.grey[900]!
-                    : Colors.grey.withOpacity(0.5),
+                color: Colors.grey.withOpacity(0.5),
                 spreadRadius: 2,
                 blurRadius: 5,
                 offset: const Offset(0, 3),
