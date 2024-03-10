@@ -15,6 +15,7 @@ abstract class Dimensions {
   static const double large = 30.0;
   static const double semiLarge = 50.0;
   static const double extraLarge = 60.0;
+  static const double extraExtraLarge = 120;
 
   // Padding - Space between siblings
   static const double paddingExtraExtraSmall = extraExtraSmall;

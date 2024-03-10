@@ -55,7 +55,7 @@ class MainScreen extends StatelessWidget {
         return Scaffold(
           extendBodyBehindAppBar: false,
           appBar: PreferredSize(
-            preferredSize: const Size.fromHeight(120),
+            preferredSize: const Size.fromHeight(Dimensions.extraExtraLarge),
             child: Responsive(
               desktop: _DesktopNavigationBar(tabsRouter: tabsRouter),
               mobile: HomeScreen(),
