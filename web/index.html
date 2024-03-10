@@ -27,7 +27,7 @@
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
     <!-- TODO: Add your Google Maps API key here -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2T8YuHm64l4APO6SWSBnc8mJaTUTkubs"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=$GOOGLE_MAPS_API_KEY"></script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico"/>
@@ -57,29 +57,6 @@
         return appRunner.runApp();
       });
     });
-  </script>
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyB2T8YuHm64l4APO6SWSBnc8mJaTUTkubs",
-      authDomain: "darnsterfinance.firebaseapp.com",
-      projectId: "darnsterfinance",
-      storageBucket: "darnsterfinance.appspot.com",
-      messagingSenderId: "846041151664",
-      appId: "1:846041151664:web:910269974d77ed5fa3e375",
-      measurementId: "G-HBK7JGTL7B"
-    };
-  
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
   </script>
 </body>
 </html>
