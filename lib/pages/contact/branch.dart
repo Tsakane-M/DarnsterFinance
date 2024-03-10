@@ -47,10 +47,11 @@ class Branch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double opacity = 0.8;
     return Container(
       padding: const EdgeInsets.all(Dimensions.medium),
       decoration: BoxDecoration(
-        color: whiteColor.withOpacity(0.8),
+        color: whiteColor.withOpacity(opacity),
         borderRadius: BorderRadius.circular(Dimensions.mediumHalved),
       ),
       child: Row(
@@ -65,25 +66,25 @@ class Branch extends StatelessWidget {
                 Text(
                   branchName,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: Dimensions.regular,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
                   address,
-                  style: const TextStyle(fontSize: 16),
+                  style: const TextStyle(fontSize: Dimensions.regular),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: Dimensions.mediumHalved),
                 const Text(
                   'Landline',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: Dimensions.regular,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
                   landline,
-                  style: const TextStyle(fontSize: 16),
+                  style: const TextStyle(fontSize: Dimensions.regular),
                 ),
                 const SizedBox(height: 10),
                 const Text(
@@ -95,7 +96,7 @@ class Branch extends StatelessWidget {
                 ),
                 Text(
                   email,
-                  style: const TextStyle(fontSize: 16),
+                  style: const TextStyle(fontSize: Dimensions.regular),
                 ),
                 const SizedBox(height: 10),
                 const Text(
@@ -107,7 +108,7 @@ class Branch extends StatelessWidget {
                 ),
                 Text(
                   cell,
-                  style: const TextStyle(fontSize: 16),
+                  style: const TextStyle(fontSize: Dimensions.regular),
                 ),
               ],
             ),
