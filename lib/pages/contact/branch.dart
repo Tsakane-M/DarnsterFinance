@@ -27,7 +27,7 @@ class Branch extends StatelessWidget {
           latLng: const LatLng(-20.156817, 28.580317),
         );
 
-  const Branch.chipinge({Key? key})
+  Branch.chipinge({Key? key})
       : this(
           key: key,
           branchName: 'Chipinge Branch',
@@ -48,100 +48,105 @@ class Branch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const double opacity = 0.8;
-    return Container(
-      padding: const EdgeInsets.all(Dimensions.medium),
-      decoration: BoxDecoration(
-        color: whiteColor.withOpacity(opacity),
-        borderRadius: BorderRadius.circular(Dimensions.mediumHalved),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          SizedBox(
-            width: 300, // Fixed width for branch info
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  branchName,
-                  style: const TextStyle(
-                    fontSize: Dimensions.regular,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  address,
-                  style: const TextStyle(fontSize: Dimensions.regular),
-                ),
-                const SizedBox(height: Dimensions.mediumHalved),
-                const Text(
-                  'Landline',
-                  style: TextStyle(
-                    fontSize: Dimensions.regular,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  landline,
-                  style: const TextStyle(fontSize: Dimensions.regular),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  'Email',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  email,
-                  style: const TextStyle(fontSize: Dimensions.regular),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  'Cell',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  cell,
-                  style: const TextStyle(fontSize: Dimensions.regular),
-                ),
-              ],
-            ),
+    return Row(
+      children: <Widget>[
+        Container(
+          height: 350,
+          padding: const EdgeInsets.all(Dimensions.medium),
+          decoration: BoxDecoration(
+            color: whiteColor.withOpacity(opacity),
+            borderRadius: BorderRadius.circular(Dimensions.mediumHalved),
           ),
-          const SizedBox(width: 20),
-          Flexible(
-            fit: FlexFit.tight,
-            child: Container(
-              height: 350,
-              decoration: BoxDecoration(
-                borderRadius:
-                    BorderRadius.circular(20), // Adjust border radius as needed
-                border: Border.all(color: Colors.blue), // Blue border
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: GoogleMap(
-                  initialCameraPosition: CameraPosition(
-                    target: latLng,
-                    zoom: 15,
-                  ),
-                  markers: <Marker>{
-                    Marker(
-                      markerId: MarkerId(branchName),
-                      position: latLng,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              SizedBox(
+                width: 300, // Fixed width for branch info
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      branchName,
+                      style: const TextStyle(
+                        fontSize: Dimensions.regular,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  },
+                    Text(
+                      address,
+                      style: const TextStyle(fontSize: Dimensions.regular),
+                    ),
+                    const SizedBox(height: Dimensions.mediumHalved),
+                    const Text(
+                      'Landline',
+                      style: TextStyle(
+                        fontSize: Dimensions.regular,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      landline,
+                      style: const TextStyle(fontSize: Dimensions.regular),
+                    ),
+                    const SizedBox(height: 10),
+                    const Text(
+                      'Email',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      email,
+                      style: const TextStyle(fontSize: Dimensions.regular),
+                    ),
+                    const SizedBox(height: 10),
+                    const Text(
+                      'Cell',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      cell,
+                      style: const TextStyle(fontSize: Dimensions.regular),
+                    ),
+                  ],
                 ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(width: 20),
+        Flexible(
+          fit: FlexFit.tight,
+          child: Container(
+            height: 350,
+            decoration: BoxDecoration(
+              borderRadius:
+                  BorderRadius.circular(20), // Adjust border radius as needed
+              border: Border.all(color: Colors.blue), // Blue border
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: GoogleMap(
+                initialCameraPosition: CameraPosition(
+                  target: latLng,
+                  zoom: 15,
+                ),
+                markers: <Marker>{
+                  Marker(
+                    markerId: MarkerId(branchName),
+                    position: latLng,
+                  ),
+                },
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
