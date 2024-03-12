@@ -44,19 +44,55 @@
   <script src="flutter.js" defer></script>
 </head>
 <body>
+ <style>
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .main-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    transition: opacity .4s ease-out;
+  }
+  #loader-content img {
+    width: 500px; 
+    height: auto; 
+  }
+ </style>
+
   <script>
-    window.addEventListener('load', function(ev) {
+    function delay(time){
+      return new Promise(resolve => setTimeout(resolve,time))
+    }
+    window.addEventListener('load', async function(ev) {
+
+      var loaderContent = document.getElementById('loader-content');
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
         serviceWorker: {
           serviceWorkerVersion: serviceWorkerVersion,
         }
       }).then(function(engineInitializer) {
+
         return engineInitializer.initializeEngine();
-      }).then(function(appRunner) {
+        
+
+      }).then(async function(appRunner) {
+        loaderContent.style.opacity = 0;
+         await delay(300)
         return appRunner.runApp();
       });
     });
   </script>
+  <div class="main-content" id="loader-content">
+    <img src="../web/icons/darnster_logo.png" alt="Darnster Finance">
+
+  </div>
 </body>
 </html>
