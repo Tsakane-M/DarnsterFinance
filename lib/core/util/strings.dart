@@ -26,11 +26,11 @@ String contactUs = 'Contact Us';
 String reachOut =
     'Feel free to reach out to us for any inquiries or assistance. Our team is here to help!';
 String branchLocations = 'Branches';
-String sendUSMessage = 'Send us a message';
+String sendUSMessage = 'We\'d love to hear from you';
 String name = 'Name';
 String email = 'Email';
 String message = 'Message';
-String send = 'Send';
+String submit = 'Submit';
 
 //assets
 String darnsterFinanceLogo = 'assets/images/darnster_logo.png';

@@ -49,74 +49,69 @@ class Branch extends StatelessWidget {
   Widget build(BuildContext context) {
     const double opacity = 0.8;
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: <Widget>[
-        Container(
-          height: 350,
-          padding: const EdgeInsets.all(Dimensions.medium),
-          decoration: BoxDecoration(
-            color: whiteColor.withOpacity(opacity),
-            borderRadius: BorderRadius.circular(Dimensions.mediumHalved),
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              SizedBox(
-                width: 300, // Fixed width for branch info
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      branchName,
-                      style: const TextStyle(
-                        fontSize: Dimensions.regular,
-                        fontWeight: FontWeight.bold,
-                      ),
+        SizedBox(
+          width: 300, // Fixed width for branch info
+          child: Card(
+            elevation: 5,
+            shadowColor: Colors.blue,
+            child: Padding(
+              padding: const EdgeInsets.all(Dimensions.paddingRegular),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    branchName,
+                    style: const TextStyle(
+                      fontSize: Dimensions.regular,
+                      fontWeight: FontWeight.bold,
                     ),
-                    Text(
-                      address,
-                      style: const TextStyle(fontSize: Dimensions.regular),
+                  ),
+                  Text(
+                    address,
+                    style: const TextStyle(fontSize: Dimensions.regular),
+                  ),
+                  const SizedBox(height: Dimensions.mediumHalved),
+                  const Text(
+                    'Landline',
+                    style: TextStyle(
+                      fontSize: Dimensions.regular,
+                      fontWeight: FontWeight.bold,
                     ),
-                    const SizedBox(height: Dimensions.mediumHalved),
-                    const Text(
-                      'Landline',
-                      style: TextStyle(
-                        fontSize: Dimensions.regular,
-                        fontWeight: FontWeight.bold,
-                      ),
+                  ),
+                  Text(
+                    landline,
+                    style: const TextStyle(fontSize: Dimensions.regular),
+                  ),
+                  const SizedBox(height: 10),
+                  const Text(
+                    'Email',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
                     ),
-                    Text(
-                      landline,
-                      style: const TextStyle(fontSize: Dimensions.regular),
+                  ),
+                  Text(
+                    email,
+                    style: const TextStyle(fontSize: Dimensions.regular),
+                  ),
+                  const SizedBox(height: 10),
+                  const Text(
+                    'Cell',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
                     ),
-                    const SizedBox(height: 10),
-                    const Text(
-                      'Email',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      email,
-                      style: const TextStyle(fontSize: Dimensions.regular),
-                    ),
-                    const SizedBox(height: 10),
-                    const Text(
-                      'Cell',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      cell,
-                      style: const TextStyle(fontSize: Dimensions.regular),
-                    ),
-                  ],
-                ),
+                  ),
+                  Text(
+                    cell,
+                    style: const TextStyle(fontSize: Dimensions.regular),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
         const SizedBox(width: 20),
