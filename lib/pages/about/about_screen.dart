@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../core/color/colors.dart';
+
 @RoutePage()
 class AboutScreen extends StatelessWidget {
   const AboutScreen({Key? key}) : super(key: key);
@@ -9,6 +11,7 @@ class AboutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: pageBackgroundColor,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: size.width / 8, vertical: 10),
         child: const Column(

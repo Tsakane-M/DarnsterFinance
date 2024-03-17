@@ -8,7 +8,6 @@ import '../../core/color/colors.dart';
 import '../../core/util/strings.dart';
 import '../../dimensions/dimensions.dart';
 import 'branch.dart';
-import 'general_divider.dart';
 
 @RoutePage()
 class ContactScreen extends StatelessWidget {
@@ -114,6 +113,9 @@ class ContactScreen extends StatelessWidget {
                       const SizedBox(height: 20),
                       ElevatedButton(
                         onPressed: () async {
+                          nameController.clear();
+                          emailController.clear();
+                          messageController.clear();
                           final SmtpServer smtpServer =
                               gmail('gmail.com', 'password.');
 

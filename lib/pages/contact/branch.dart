@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import '../../core/color/colors.dart';
 import '../../dimensions/dimensions.dart';
 
 class Branch extends StatelessWidget {

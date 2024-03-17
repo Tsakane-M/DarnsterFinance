@@ -32,9 +32,22 @@ String email = 'Email';
 String message = 'Message';
 String submit = 'Submit';
 
+//services page
+String servicesTitle = 'Services';
+String servicesSubtitle =
+    'We offer a range of financial services to meet your needs.';
+String assetBasedLoans = 'Asset-Based Loans';
+String businessLoans = 'Business Loans';
+String personalLoans = 'Personal Loans';
+String ecocash = 'Ecocash';
+
 //assets
 String darnsterFinanceLogo = 'assets/images/darnster_logo.png';
 String mainImage = 'assets/images/main_image.jpg';
 String worriesImage = 'assets/images/financial_worries.png';
 String freedomImage = 'assets/images/financial_freedom.png';
 String contactBackgroundImage = 'assets/images/contact_us_image.jpg';
+String assetBasedLoansImage = 'assets/images/asset_loans_service.jpg';
+String businessLoansImage = 'assets/images/business_loans_service.jpg';
+String personalLoansImage = 'assets/images/personal_loans_service.jpg';
+String ecocashImage = 'assets/images/ecocash.png';
