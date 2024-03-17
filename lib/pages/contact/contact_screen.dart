@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:mailer/mailer.dart';
 import 'package:mailer/smtp_server.dart';
-import 'package:mailer/smtp_server/gmail.dart';
 
 import '../../core/color/colors.dart';
 import '../../core/util/strings.dart';

@@ -46,7 +46,6 @@ class Branch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double opacity = 0.8;
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,

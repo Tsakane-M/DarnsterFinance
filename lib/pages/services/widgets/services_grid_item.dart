@@ -1,16 +1,18 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../app/utils/on_hover.dart';
 import '../../../components/image/safe_network_image.dart';
 import '../../../core/util/strings.dart';
 import '../../../dimensions/dimensions.dart';
+import '../../../navigation/app_router.gr.dart';
 
 class ServicesGridItem extends StatelessWidget {
   const ServicesGridItem({
     super.key,
     required this.name,
     required this.info,
-    this.link,
+    required this.link,
     required this.imageUrl,
     this.imageWidth,
     this.imageHeight,
@@ -23,16 +25,18 @@ class ServicesGridItem extends StatelessWidget {
           xTranslation: -2,
           imageUrl: assetBasedLoansImage,
           imageHeight: 160,
+          link: const AssetBasedLoansScreenRoute(),
           name: assetBasedLoans,
           info:
               'Access small loans to support your business or personal needs with flexible repayment terms.',
         );
 
-  ServicesGridItem.bussinessLoans({Key? key})
+  ServicesGridItem.businessLoans({Key? key})
       : this(
           key: key,
           xTranslation: 1,
           imageUrl: businessLoansImage,
+          link: const BusinessLoansScreenRoute(),
           imageHeight: 160,
           name: businessLoans,
           info:
@@ -44,6 +48,7 @@ class ServicesGridItem extends StatelessWidget {
           key: key,
           xTranslation: -2,
           imageUrl: personalLoansImage,
+          link: const PersonalLoansScreenRoute(),
           imageHeight: 160,
           name: personalLoans,
           info:
@@ -56,12 +61,13 @@ class ServicesGridItem extends StatelessWidget {
           xTranslation: 1,
           imageUrl: ecocashImage,
           name: ecocash,
+          link: const EcocashScreenRoute(),
           info:
               ' Send money to loved ones, pay bills, and buy airtime using your mobile phone.',
         );
 
   final String name;
-  final Route<dynamic>? link;
+  final PageRouteInfo<dynamic> link;
   final String info;
   final String imageUrl;
   final double? imageWidth;
@@ -90,6 +96,7 @@ class ServicesGridItem extends StatelessWidget {
           child: GestureDetector(
             onTap: () {
               // onTapNavCallback();
+              context.pushRoute(link);
             },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

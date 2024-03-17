@@ -9,6 +9,7 @@ import '../../../core/responsive/responsive.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../core/theme/cubit/theme_cubit.dart';
 import '../../../dimensions/dimensions.dart';
+import '../../../navigation/app_router.gr.dart';
 import 'navigation_bar_action_button.dart';
 import 'navigation_bar_logo.dart';
 
@@ -53,7 +54,11 @@ class _DesktopNavigationBarState extends State<DesktopNavigationBar> {
           ),
           child: Row(
             children: <Widget>[
-              const NavigationBarLogo(),
+              GestureDetector(
+                  onTap: () {
+                    context.pushRoute(const HomeScreenRoute());
+                  },
+                  child: const NavigationBarLogo()),
               const Expanded(child: SizedBox(width: double.infinity)),
               ...NavigationBarUtils.navigationBarItems.mapIndexed(
                 (int index, NavigationBarItem item) =>

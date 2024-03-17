@@ -51,3 +51,9 @@ String assetBasedLoansImage = 'assets/images/asset_loans_service.jpg';
 String businessLoansImage = 'assets/images/business_loans_service.jpg';
 String personalLoansImage = 'assets/images/personal_loans_service.jpg';
 String ecocashImage = 'assets/images/ecocash.png';
+String assetBasedLoansCleanImage =
+    'assets/images/asset_loans_service_clean.png';
+String businessLoansCleanImage =
+    'assets/images/business_loans_service_clean.png';
+String personalLoansCleanImage =
+    'assets/images/personal_loans_service_clean.png';

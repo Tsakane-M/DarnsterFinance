@@ -10,12 +10,29 @@ class ServicesRouterConfig extends AutoRouter {
     path: 'services',
     page: ServicesRouter.page,
     children: _servicesRoutes,
+    maintainState: false,
   );
 
   static final List<AutoRoute> _servicesRoutes = <AutoRoute>[
     AutoRoute(
       path: '',
       page: ServicesScreenRoute.page,
+    ),
+    AutoRoute(
+      path: 'ecocash',
+      page: EcocashScreenRoute.page,
+    ),
+    AutoRoute(
+      path: 'asset_based_loans',
+      page: AssetBasedLoansScreenRoute.page,
+    ),
+    AutoRoute(
+      path: 'business_loans',
+      page: BusinessLoansScreenRoute.page,
+    ),
+    AutoRoute(
+      path: 'personal_loans',
+      page: PersonalLoansScreenRoute.page,
     ),
   ];
 }

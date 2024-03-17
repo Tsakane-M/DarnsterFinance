@@ -42,7 +42,7 @@ class ServicesScreen extends StatelessWidget {
                 childAspectRatio: 2.5,
                 children: <Widget>[
                   ServicesGridItem.personalLoans(),
-                  ServicesGridItem.bussinessLoans(),
+                  ServicesGridItem.businessLoans(),
                   ServicesGridItem.assetBasedLoans(),
                   ServicesGridItem.ecocash()
                 ],
