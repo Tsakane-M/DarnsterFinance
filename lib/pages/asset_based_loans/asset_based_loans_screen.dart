@@ -1,8 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../components/image/safe_network_image.dart';
-
 import '../../core/util/strings.dart';
 
 @RoutePage()
@@ -21,11 +19,12 @@ class AssetBasedLoansScreen extends StatelessWidget {
             child: Hero(
               tag: assetBasedLoans,
               transitionOnUserGestures: true,
-              child: SafeNetworkImage(
-                width: 500,
+              child: Image.asset(
+                assetBasedLoansCleanImage,
                 height: 100,
-                imageUrl: assetBasedLoansCleanImage,
+                width: 500,
                 fit: BoxFit.cover,
+                alignment: Alignment.topCenter,
               ),
             ),
           ),

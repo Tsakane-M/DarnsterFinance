@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../app/utils/on_hover.dart';
-import '../../components/image/safe_network_image.dart';
+
 import '../../core/util/strings.dart';
 
 @RoutePage()
@@ -22,11 +22,12 @@ class EcocashScreen extends StatelessWidget {
             child: Hero(
               transitionOnUserGestures: true,
               tag: ecocash,
-              child: SafeNetworkImage(
-                width: 300,
+              child: Image.asset(
+                ecocashImage,
                 height: 80,
-                imageUrl: ecocashImage,
+                width: 300,
                 fit: BoxFit.contain,
+                alignment: Alignment.topCenter,
               ),
             ),
           ),

@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../app/utils/on_hover.dart';
-import '../../../components/image/safe_network_image.dart';
 import '../../../core/util/strings.dart';
 import '../../../dimensions/dimensions.dart';
 import '../../../navigation/app_router.gr.dart';
@@ -98,21 +97,17 @@ class ServicesGridItem extends StatelessWidget {
               // onTapNavCallback();
               context.pushRoute(link);
             },
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
+            child: Stack(
+              alignment: Alignment.center,
               children: <Widget>[
-                Stack(
-                  alignment: Alignment.center,
-                  children: <Widget>[
-                    Hero(
-                      tag: name,
-                      child: SafeNetworkImage(
-                        imageUrl: imageUrl,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ],
+                Hero(
+                  tag: name,
+                  child: Image(
+                    image: Image.asset(imageUrl,
+                            width: imageWidth, height: imageHeight)
+                        .image,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ],
             ),
