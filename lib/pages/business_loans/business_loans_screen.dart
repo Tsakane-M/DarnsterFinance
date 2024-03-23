@@ -31,7 +31,7 @@ class BusinessLoansScreen extends StatelessWidget {
                   businessLoansCleanImage,
                   height: 100,
                   width: 500,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.contain,
                   alignment: Alignment.topCenter,
                 ),
               ),

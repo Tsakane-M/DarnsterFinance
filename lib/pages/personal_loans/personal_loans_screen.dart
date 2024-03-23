@@ -31,7 +31,7 @@ class PersonalLoansScreen extends StatelessWidget {
                   personalLoansCleanImage,
                   height: 100,
                   width: 500,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.contain,
                   alignment: Alignment.topCenter,
                 ),
               ),
