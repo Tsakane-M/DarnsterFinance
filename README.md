@@ -4,7 +4,8 @@ This is a website for experimenting the possibilities of Flutter Web
 ## Showcase
 
 
-https://github.com/Tsakane-M/DarnsterFinance/assets/61164846/19fc1958-fe9b-4dea-a8ba-a1f7d262a02d
+https://github.com/Tsakane-M/DarnsterFinance/assets/61164846/0e59bed5-9efe-4639-a4ac-4045e1568688
+
 
 
 
